@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         mainActivityViewModel =
                 new ViewModelProvider(MainActivity.this).get(MainActivityViewModel.class);
 
-        binding.button2.setOnClickListener(view -> {
+        binding.buttonAgregarFragmento.setOnClickListener(view -> {
 
             String dniStr = binding.editTextDni.getText().toString();
             Persona persona = new Persona(dniStr);
@@ -44,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
                     .beginTransaction()
                     .setReorderingAllowed(true)
                     .addToBackStack(null)
-                    .add(binding.fragmentContainerView2.getId(), BlueFragment.class, bundle)
+                    .add(binding.fragmentContainerViewBlue.getId(), BlueFragment.class, bundle)
                     .commit();
         });
 
-        binding.buttonEnviarData1.setOnClickListener(view -> {
+        binding.buttonEnviarMuchaData.setOnClickListener(view -> {
             mainActivityViewModel.getListMutableLiveData().setValue(create10People());
         });
 
