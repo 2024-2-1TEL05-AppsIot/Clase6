@@ -40,7 +40,8 @@ public class BlankFragment extends Fragment {
 
         mainActivityViewModel.getListMutableLiveData().observe(getViewLifecycleOwner(), personas -> {
             Random r = new Random();
-            binding.textViewDNIRandom.setText(personas.get(r.nextInt(personas.size())).getDni());
+            String dni = personas.get(r.nextInt(personas.size())).getDni();
+            binding.textViewDNIRandom.setText(dni);
         });
 
         return binding.getRoot();
